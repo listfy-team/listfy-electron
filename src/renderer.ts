@@ -28,4 +28,4 @@
 
 // Add this to the end of the existing file
 import './index.scss';
-import './app';
+import './index.react';

@@ -1,8 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import Button from './components/Button'
 
-function render() {
-  ReactDOM.render(<h2>Hello from React!</h2>, document.body);
+export default function App(){
+  return(
+    <div>
+      <h1>Olá Mundoo</h1>
+      <Button/>
+    </div>
+  );
 }
 
-render();

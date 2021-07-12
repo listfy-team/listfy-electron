@@ -1,3 +1,4 @@
+
 module.exports = {
   /**
    * This is the main entry point for your application, it's the first file
@@ -9,7 +10,8 @@ module.exports = {
     rules: require('./webpack.rules'),
   },
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json','.scss',
-    '.sass',]
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json', '.scss',
+      '.sass',],
+      
   },
 };
