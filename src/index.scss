@@ -1,3 +1,34 @@
+
+$tomato-red: #db2727;
+$juice-red: #F59C9C;
+$white: #EBEBEB;
+$grey: #d1d1d1;
+$dark-grey: #333;
+$sun-yellow: #FFBE0B;
+$orange: #FB5607;
+$shok-pink: #FF006E;
+$shallow-purple: #8338EC;
+$blue-sky: #3A86FF;
+$deep-blue: #081732;
+$dark-blue: #000714;
+$spotify-green:#1db954;
+
+:root {
+    --tomato-red: #db2727;
+    --juice-red: #F59C9C;
+    --white: #EBEBEB;
+    --grey: #d1d1d1;
+    --dark-grey: #333;
+    --sun-yellow: #FFBE0B;
+    --orange: #FB5607;
+    --shok-pink: #FF006E;
+    --shallow-purple: #8338EC;
+    --blue-sky: #3A86FF;
+    --deep-blue: #081732;
+    --dark-blue: #000714;
+    --secondary-dark-blue: #0e1625;
+    --spotify-green:#1db954;
+}
 h2{
     color: red;
 }

@@ -19,6 +19,7 @@ const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
     height: 900,
     width: 1200,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true, // is default value after Electron v5
       contextIsolation: true, // protect against prototype pollution

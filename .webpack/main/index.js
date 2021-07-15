@@ -24477,6 +24477,7 @@ var createWindow = function () {
     var mainWindow = new electron_1.BrowserWindow({
         height: 900,
         width: 1200,
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: true,

@@ -5,6 +5,10 @@ module.exports = [
     use: 'node-loader',
   },
   {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: "asset/resource",
+  },
+  {
     test: /\.(m?js|node)$/,
     parser: { amd: false },
     use: {
