@@ -1,6 +1,7 @@
 import React from 'react';
 import './sidebar.scss';
 import logo from '../../assets/icons/listfy-logo-white.png';
+import { Link } from 'react-router-dom';
 
 
 function close() {
@@ -36,45 +37,45 @@ export default function Sidebar() {
                     <span className="tooltip">Buscar</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link className="sizePad" to='/dashboard'>
                         <i className='bx bx-grid-alt'></i>
                         <span className="links_name">Dashboard</span>
-                    </a>
+                    </Link>
                     <span className="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link className="sizePad" to='/user'>
                         <i className='bx bx-user' ></i>
                         <span className="links_name">Usuário</span>
-                    </a>
+                    </Link>
                     <span className="tooltip">Usuário</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link className="sizePad" to='/notifications'>
                         <i className='bx bx-bell' ></i>
                         <span className="links_name">Notificações</span>
-                    </a>
+                    </Link>
                     <span className="tooltip">Notificações</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link className="sizePad" to='/data'>
                         <i className='bx bx-folder' ></i>
                         <span className="links_name">Dados</span>
-                    </a>
+                    </Link>
                     <span className="tooltip">Dados</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link className="sizePad" to='/calendar'>
                         <i className='bx bx-calendar'></i>
                         <span className="links_name">Calendário</span>
-                    </a>
+                    </Link>
                     <span className="tooltip">Calendário</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link className="sizePad" to='/settings'>
                         <i className='bx bx-cog' ></i>
                         <span className="links_name">Configurações</span>
-                    </a>
+                    </Link>
                     <span className="tooltip">Configurações</span>
                 </li>
                 <li className="profile">
