@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
+import { verifyStorage } from './controller/localStorage'
 import Sidebar from './components/sidebar/Sidebar';
 import './sass/app.scss'
 
@@ -11,19 +12,21 @@ import Data from './pages/data/Data';
 import Calendar from './pages/calendar/Calendar';
 import Settings from './pages/settings/Settings';
 
-export default function App(){
-  return(
+export default function App() {
+  verifyStorage();
+  return (
     <div className="app">
-      <Sidebar/>
+      <Sidebar />
       <section className="home-section">
-      <Switch>
-            <Route exact path='/dashboard' component={Dashboard}/>
-            <Route path='/user' component={User}/>
-            <Route path='/notifications' component={Notifications}/>
-            <Route path='/data' component={Data}/>
-            <Route path='/calendar' component={Calendar}/>
-            <Route path='/settings' component={Settings}/>
-      </Switch>
+        <Switch>
+          <Route exact path='/' component={Dashboard} />
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/user' component={User} />
+          <Route path='/notifications' component={Notifications} />
+          <Route path='/data' component={Data} />
+          <Route path='/calendar' component={Calendar} />
+          <Route path='/settings' component={Settings} />
+        </Switch>
       </section>
     </div>
   );
