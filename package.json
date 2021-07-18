@@ -1,7 +1,7 @@
 {
   "name": "listfy-electron",
   "productName": "listfy-electron",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts ."
+    "lint": "eslint --ext .ts .",
+    "commit": "cz"
   },
   "keywords": [],
   "author": {
@@ -60,9 +61,14 @@
           }
         ]
       ]
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@electron-forge/cli": "^6.0.0-beta.57",
     "@electron-forge/maker-deb": "^6.0.0-beta.57",
     "@electron-forge/maker-rpm": "^6.0.0-beta.57",
@@ -78,10 +84,12 @@
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "css-loader": "^5.2.6",
+    "cz-conventional-changelog": "^3.3.0",
     "electron": "^13.1.6",
     "eslint": "^7.30.0",
     "eslint-plugin-import": "^2.23.4",
     "fork-ts-checker-webpack-plugin": "^6.2.12",
+    "husky": "^7.0.1",
     "node-loader": "^2.0.0",
     "node-sass": "^6.0.1",
     "sass-loader": "^12.1.0",

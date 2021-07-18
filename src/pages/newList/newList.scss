@@ -1,0 +1,136 @@
+
+/*=========================================================================*/
+/*MODA DE CRIAÇÃO DE LISTAS
+/*=========================================================================*/
+
+.new-list{
+    max-width:800px;
+    height: 100%;
+}
+.modal {
+    border-radius: 20px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-blue);
+    border: none;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.section-nome-da-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.nome-da-lista {
+    background-color: var(--grey);
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    height: 3rem;
+    resize: none;
+    margin: 10px;
+    color: var(--dark-grey);
+    font-size: 1.3rem;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+.radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom-radio input {
+    display: none;
+}
+
+.radio-btn {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px #c3c3c367;
+    cursor: pointer;
+}
+
+
+
+
+.custom-radio input:checked+.radio-btn {
+    border: 5px solid #fff;
+    box-shadow: 0 0 2px #000;
+}
+
+.options-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 50px;
+}
+
+.options-buttons button {
+    width: 40%;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+}
+
+.modal-closer {
+    color: var(--tomato-red);
+    background-color: var(--juice-red);
+}
+
+.list-creator {
+    color: #0e7432;
+    background-color: #74d897;
+}
+
+.modal-closer:hover {
+    background-color: var(--tomato-red);
+    color: var(--juice-red);
+}
+
+.list-creator:hover {
+    background-color: #0e7432;
+    color: #74d897;
+}
