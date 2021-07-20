@@ -1,6 +1,10 @@
+
+$text-new-list: #444;
+$bg-new-list: #ccc;
 .list-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .add-list-button{
@@ -16,9 +20,15 @@
     i{
         font-size: 10rem;
     }
-    :hover{
-        background-color: #CCC;
-        color: #444;
+    &:hover{
+        background-color: $bg-new-list;
+        color: $text-new-list;
         cursor: pointer;
     }
+}
+
+a{
+    text-decoration: none;
+    color: $text-new-list;
+
 }

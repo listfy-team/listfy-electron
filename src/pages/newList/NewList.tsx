@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './newList.scss';
-
+import { useHistory } from 'react-router-dom'
+import { addNewList } from '../../controller/localStorage'
 
 
 
@@ -10,18 +11,40 @@ export default function NewList() {
         "#8338EC",
         "#3A86FF",
         "#1Db954"];
-
-
+    const history = useHistory()
+    const handleButtonClick = (event: any) => {
+        createList();
+        history.push(event.target.value)
+    }
+    function createList() {
+        let listTitle: any = (document.querySelector('input.list-name') as HTMLInputElement).value;
+        if (listTitle == null || listTitle == '') {
+            listTitle = "untitled list";
+        }
+        console.log(listTitle);
+        let listColor
+        let radioColorGroup: any = [];
+        radioColorGroup = document.querySelectorAll('input.color-selector');
+        for (let i = 0; i < radioColorGroup.length; i++) {
+            if (radioColorGroup[i].checked) {
+                listColor = radioColorGroup[i].value;
+                break;
+            } else {
+                listColor = '#CCC'
+            }
+        }
+        addNewList(listTitle, listColor);
+        console.log('fiz minha parte')
+    }
     return (
-        <div className="new-list">
-
-            <div className="modal" id="modal">
-                <div className="modal-header">
+        <div className="new-list-container">
+            <div className="new-list" id="new-list">
+                <div className="new-list-header">
                     <h1>Nova Lista</h1>
                 </div>
-                <div className="modal-body">
-                    <div className="section-nome-da-lista">
-                        <input type="text" className="nome-da-lista" placeholder="Nome da lista" />
+                <div className="new-list-body">
+                    <div className="section-list-name">
+                        <input type="text" className="list-name" placeholder="Nome da lista" />
                     </div>
                     <form className="radio-buttons">
                         <label className="custom-radio">
@@ -51,11 +74,11 @@ export default function NewList() {
                         </label>
                     </form>
                     <div className="options-buttons">
-                        <button className="modal-closer">
+                        <button className="new-list-closer">
                             <i className='bx bx-x-circle'></i> Cancelar
                         </button>
-                        <button className="list-creator">
-                            <i className='bx bx-plus-circle'></i> Criar
+                        <button className="list-creator" value="/dashboard" onClick={handleButtonClick}>
+                            <i className='bx bx-plus-circle' ></i> Criar
                         </button>
                     </div>
                 </div>

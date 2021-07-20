@@ -3,64 +3,63 @@
 /*MODA DE CRIAÇÃO DE LISTAS
 /*=========================================================================*/
 
-.new-list{
-    max-width:800px;
+.new-list-container{
+    max-width:500px;
     height: 100%;
 }
-.modal {
-    border-radius: 20px;
-    background-color: white;
+.new-list {
+    background-color: var(--white-grey);
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #aaa;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.modal-header {
+.new-list-header {
     padding: 10px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--dark-blue);
     border: none;
-}
 
-.modal-header .title {
-    font-size: 1.25rem;
-    font-weight: bold;
+    .title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .close-button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
 }
-
-.modal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.section-nome-da-lista {
+.section-list-name {
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+
+    .list-name {
+        background-color: var(--grey);
+        border: none;
+        border-radius: 10px;
+        width: 70%;
+        font-family: 'Roboto', sans-serif;
+        height: 3rem;
+        resize: none;
+        margin: 10px;
+        color: var(--dark-grey);
+        font-size: 1.3rem;
+        margin: 0 auto;
+        padding-left: 10px;
+    }
 }
 
-.nome-da-lista {
-    background-color: var(--grey);
-    border: none;
-    border-radius: 10px;
-    width: 70%;
-    font-family: 'Roboto', sans-serif;
-    height: 3rem;
-    resize: none;
-    margin: 10px;
-    color: var(--dark-grey);
-    font-size: 1.3rem;
-    margin: 0 auto;
-    padding-left: 10px;
-}
-
-.modal-body {
+.new-list-body {
     padding: 10px 15px;
 }
 
@@ -115,22 +114,22 @@
     border: none;
 }
 
-.modal-closer {
+.new-list-closer {
     color: var(--tomato-red);
     background-color: var(--juice-red);
+
+    &:hover {
+        background-color: var(--tomato-red);
+        color: var(--juice-red);
+    }
 }
 
 .list-creator {
     color: #0e7432;
     background-color: #74d897;
-}
 
-.modal-closer:hover {
-    background-color: var(--tomato-red);
-    color: var(--juice-red);
-}
-
-.list-creator:hover {
-    background-color: #0e7432;
-    color: #74d897;
+    &:hover {
+        background-color: #0e7432;
+        color: #74d897;
+    }
 }
