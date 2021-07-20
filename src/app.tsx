@@ -21,13 +21,13 @@ export default function App() {
       <section className="home-section">
         <Switch>
           <Route exact path='/' component={Dashboard} />
-          <Route path='/dashboard' component={Dashboard} />
-          <Route path='/user' component={User} />
-          <Route path='/notifications' component={Notifications} />
-          <Route path='/data' component={Data} />
-          <Route path='/calendar' component={Calendar} />
-          <Route path='/settings' component={Settings} />
-          <Route path='/newlist' component={NewList}/>
+          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/user' component={User} />
+          <Route exact path='/notifications' component={Notifications} />
+          <Route exact path='/data' component={Data} />
+          <Route exact path='/calendar' component={Calendar} />
+          <Route exact path='/settings' component={Settings} />
+          <Route exact path='/newlist' component={NewList}/>
         </Switch>
       </section>
     </div>

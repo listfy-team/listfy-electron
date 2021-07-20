@@ -17,6 +17,11 @@
     "name": "G4BR-13-L",
     "email": "gabriel.victorc13@gmail.com"
   },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
   "license": "MIT",
   "config": {
     "forge": {

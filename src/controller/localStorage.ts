@@ -1,3 +1,5 @@
+import { generateListId } from './idHashProcessor'
+
 const db: object = {
     UserName: "Admin",
     Email: "admin@admin.com",
@@ -29,9 +31,19 @@ const db: object = {
         }
     ]
 }
+
+// interfaces =======================
+
+interface list {
+    list_id: number,
+    list_title: string,
+    list_color: string,
+    list_items: object[],
+}
+// ==================================
 export function verifyStorage() {
     //listfy-electron-0.1.0
-    const HASH_DE_VERSAO: string = '5fdf3c76e49f2139c62af092c14898a1865a'
+    const HASH_DE_VERSAO: string = '5fdf3c76453e49f2139c62af092c14898a1865a'
     var bancogravado;
     var hashDeVersao = localStorage.getItem('hashDeVersao');
     if (hashDeVersao == HASH_DE_VERSAO) {
@@ -54,4 +66,17 @@ export function verifyStorage() {
         localStorage.setItem('bancogravado', JSON.stringify(bancogravado));
         console.table(db);
     }
+}
+
+export function addNewList(listTitle: string, listColor: string) {
+    let db = JSON.parse(localStorage.getItem('db'));
+    let newList: list = {
+        list_id: generateListId(),
+        list_title: listTitle,
+        list_color: listColor,
+        list_items: []
+    }
+    db.lists.push(newList);
+    localStorage.setItem('db', JSON.stringify(db));
+    console.log('lista Adicionada');
 }
