@@ -80,3 +80,13 @@ export function addNewList(listTitle: string, listColor: string) {
     localStorage.setItem('db', JSON.stringify(db));
     console.log('lista Adicionada');
 }
+export function deleteList(listId: number){
+    let db = JSON.parse(localStorage.getItem('db'));
+    for(let i = 0 ; i < db.lists.length ; i++){
+        if ( db.lists[i].list_id == listId ){
+            db.lists.splice(i,1)
+            break;
+        }
+    }
+    localStorage.setItem('db', JSON.stringify(db));
+}
