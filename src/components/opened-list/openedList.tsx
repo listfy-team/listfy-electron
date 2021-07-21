@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './openedList.scss';
+import Item from '../item/item'
 
 interface openListProps {
     listId: number
@@ -22,7 +23,6 @@ const noneList = {
     list_title: 'none',
     list_color: 0,
     list_items: [{
-
         item_id: 0,
         item_title: 'none',
         description: 'none',
@@ -34,8 +34,8 @@ const noneList = {
 export default function OpenedList(props: openListProps) {
     const db = JSON.parse(localStorage.getItem('db'));
     //const [db, setDb] = useState(JSON.parse(localStorage.getItem('db')));
-    
-    let listData: any;
+
+    var listData: any;
     for (let i = 0; i < db.lists.length; i++) {
         if (db.lists[i].list_id == props.listId) {
             //separateList(db.lists[i]);
@@ -46,7 +46,17 @@ export default function OpenedList(props: openListProps) {
 
     return (
         <div className="opened-list-container">
-            <h1>Lista Aberta - {props.listId} - {listData.list_title}</h1>
+
+            { listData.list_items.map((item: any, index:any) => 
+                <Item 
+                itemColor={listData.list_color}
+                itemTitle={item.item_title}
+                itemDescription={item.description}
+                itemDate={item.date}
+                isChecked={item.is_checked}
+                key={index}
+                />
+            )}
         </div>
     )
 }
