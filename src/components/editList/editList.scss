@@ -1,0 +1,132 @@
+
+/*=========================================================================*/
+/*MODA DE CRIAÇÃO DE LISTAS
+/*=========================================================================*/
+
+/*.new-list-container{
+    max-width:500px;
+    height: 100%;
+}*/
+.new-list {
+    background-color: var(--white-grey);
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    margin: 10px;
+}
+.new-list-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-blue);
+    border: none;
+    margin-bottom: 10px;
+
+    .title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .close-button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+}
+.section-list-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .list-name {
+        background-color: var(--grey);
+        border: none;
+        border-radius: 10px;
+        width: 90%;
+        font-family: 'Roboto', sans-serif;
+        height: 3rem;
+        resize: none;
+        margin: 10px;
+        color: var(--dark-grey);
+        font-size: 1.3rem;
+        margin: 0 auto;
+        padding-left: 10px;
+    }
+}
+
+.radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom-radio input {
+    display: none;
+}
+
+.radio-btn {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px #c3c3c367;
+    cursor: pointer;
+}
+
+
+
+
+.custom-radio input:checked+.radio-btn {
+    border: 5px solid #fff;
+    box-shadow: 0 0 2px #000;
+}
+
+.options-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.options-buttons button {
+    width: 40%;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+}
+
+.new-list-closer {
+    color: var(--tomato-red);
+    background-color: var(--juice-red);
+
+    &:hover {
+        background-color: var(--tomato-red);
+        color: var(--juice-red);
+    }
+}
+
+.list-creator {
+    color: #0e7432;
+    background-color: #74d897;
+
+    &:hover {
+        background-color: #0e7432;
+        color: #74d897;
+    }
+}
