@@ -5,6 +5,7 @@ import { Redirect, useHistory, Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 import NewList from '../../components/newList/NewList'
 import NewListButton from '../../components/new-list-button/newListButton';
+import OpenedList from '../../components/opened-list/openedList';
 
 
 
@@ -15,13 +16,20 @@ export default function Dashboard() {
   const [db, setDb] = React.useState(JSON.parse(localStorage.getItem('db')))
   const updateDashboard = () => setDb(JSON.parse(localStorage.getItem('db')))
   const [newlist, setNewList] = React.useState(false);
-  
+  const [openList, setOpenList] = React.useState(false);
+  const [selectedList, setSelectedList] = React.useState(0)
+
+  function listOpener(listId: number) {
+    setSelectedList(listId);
+    setOpenList(true);
+  }
+
   function showListCreator() {
     console.log(newlist)
     newlist ? setNewList(false) : setNewList(true);
     console.log(newlist);
   }
-  
+
 
   let listas: any = db.lists;
   let history: any = useHistory();
@@ -49,8 +57,8 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="dashboard">
-      <h1>Dashboard</h1>
+    <div className={`dashboard ${openList ? 'opened-list' : ''}`}>
+      <h1 className={`dashboard-page-title ${openList ? 'opened-list' : ''}`}>Dashboard</h1>
       <motion.div
         className="list-container"
         variants={variants}
@@ -59,12 +67,13 @@ export default function Dashboard() {
       >
         {listas.map((list: any, index: any) =>
           <motion.div variants={animateList} key={index}>
-                <List
-                  title={list.list_title}
-                  color={list.list_color}
-                  listId={list.list_id}
-                  updateDashboard={updateDashboard}
-                />
+            <List
+              title={list.list_title}
+              color={list.list_color}
+              listId={list.list_id}
+              updateDashboard={updateDashboard}
+              listOpener={listOpener}
+            />
           </motion.div>
         )}
         <motion.div variants={animateList}>
@@ -74,6 +83,14 @@ export default function Dashboard() {
             <NewListButton showListCreator={showListCreator} />}
         </motion.div>
       </motion.div>
+
+      {
+        openList ?
+          <div className="opened-list-view">
+            <OpenedList listId={selectedList}/>
+          </div> :
+          null
+      }
     </div>
   );
 }

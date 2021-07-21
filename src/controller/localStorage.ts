@@ -15,18 +15,46 @@ const db: object = {
                 description: 'Listfy te ajuda a organizar os estudos da melhor maneira possivel, e com o mínimo de bugs 😉',
                 date: '04/05/4242',
                 is_checked: false,
+            },
+            {
+                item_id: 31038404,
+                titulo: 'Documento da Sprint 4',
+                description: 'Terminar o documento a ser entregue na sprint 4',
+                date: '06/07/2021',
+                is_checked: true,
+            },
+            {
+                item_id: 50035049,
+                titulo: 'Teste de software',
+                description: 'Fazer teste das funcionalidades do listfy',
+                date: '10/09/2021',
+                is_checked: true,
             }]
         },
         {
-            list_id: 56635049,
+            list_id: 56635894,
             list_title: 'Tic Plec, Tic Plau, Charlie Brau',
             list_color: '#FF0228',
             list_items: [{
-                item_id: 59244453,
+                item_id: 59944453,
                 item_title: 'Sobre o listfy',
                 description: 'Listfy te ajuda a organizar os estudos da melhor maneira possivel, e com o mínimo de bugs 😉',
                 date: '04/05/4242',
                 is_checked: false,
+            },
+            {
+                item_id: 31038404,
+                titulo: 'Documento da Sprint 4',
+                description: 'Terminar o documento a ser entregue na sprint 4',
+                date: '06/07/2021',
+                is_checked: true,
+            },
+            {
+                item_id: 50035049,
+                titulo: 'Teste de software',
+                description: 'Fazer teste das funcionalidades do listfy',
+                date: '10/09/2021',
+                is_checked: true,
             }]
         }
     ]
@@ -43,7 +71,7 @@ interface list {
 // ==================================
 export function verifyStorage() {
     //listfy-electron-0.1.0
-    const HASH_DE_VERSAO: string = '5fdf3c76453e49f2139c62af092c14898a1865a'
+    const HASH_DE_VERSAO: string = '5fjyfdf3c134vfesvf76453e49f2139c62af092c898a1865a'
     var bancogravado;
     var hashDeVersao = localStorage.getItem('hashDeVersao');
     if (hashDeVersao == HASH_DE_VERSAO) {
@@ -80,12 +108,12 @@ export function addNewList(listTitle: string, listColor: string) {
     localStorage.setItem('db', JSON.stringify(db));
     console.log('lista Adicionada');
 }
-export function editList(listTitle: string, listColor:string, listId:number){
+export function editList(listTitle: string, listColor: string, listId: number) {
     let db = JSON.parse(localStorage.getItem('db'));
-    for(let i = 0 ; i < db.lists.length ; i++){
-        if ( db.lists[i].list_id == listId ){
+    for (let i = 0; i < db.lists.length; i++) {
+        if (db.lists[i].list_id == listId) {
             db.lists[i].list_title = listTitle;
-            if(listColor != null){
+            if (listColor != null) {
                 db.lists[i].list_color = listColor;
             }
             break;
@@ -94,11 +122,11 @@ export function editList(listTitle: string, listColor:string, listId:number){
     localStorage.setItem('db', JSON.stringify(db));
 
 }
-export function deleteList(listId: number){
+export function deleteList(listId: number) {
     let db = JSON.parse(localStorage.getItem('db'));
-    for(let i = 0 ; i < db.lists.length ; i++){
-        if ( db.lists[i].list_id == listId ){
-            db.lists.splice(i,1)
+    for (let i = 0; i < db.lists.length; i++) {
+        if (db.lists[i].list_id == listId) {
+            db.lists.splice(i, 1)
             break;
         }
     }
