@@ -11,8 +11,6 @@ import Notifications from './pages/notifications/Notifications';
 import Data from './pages/data/Data';
 import Calendar from './pages/calendar/Calendar';
 import Settings from './pages/settings/Settings';
-import NewList from './pages/newList/NewList';
-
 export default function App() {
   verifyStorage();
   return (
@@ -27,7 +25,6 @@ export default function App() {
           <Route exact path='/data' component={Data} />
           <Route exact path='/calendar' component={Calendar} />
           <Route exact path='/settings' component={Settings} />
-          <Route exact path='/newlist' component={NewList}/>
         </Switch>
       </section>
     </div>
