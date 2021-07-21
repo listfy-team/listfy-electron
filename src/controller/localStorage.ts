@@ -18,11 +18,11 @@ const db: object = {
             }]
         },
         {
-            list_id: 56635049,
+            list_id: 56635894,
             list_title: 'Tic Plec, Tic Plau, Charlie Brau',
             list_color: '#FF0228',
             list_items: [{
-                item_id: 59244453,
+                item_id: 59944453,
                 item_title: 'Sobre o listfy',
                 description: 'Listfy te ajuda a organizar os estudos da melhor maneira possivel, e com o mínimo de bugs 😉',
                 date: '04/05/4242',
@@ -43,7 +43,7 @@ interface list {
 // ==================================
 export function verifyStorage() {
     //listfy-electron-0.1.0
-    const HASH_DE_VERSAO: string = '5fdf3c76453e49f2139c62af092c14898a1865a'
+    const HASH_DE_VERSAO: string = '5fjyfdf3c76453e49f2139c62af092c14898a1865a'
     var bancogravado;
     var hashDeVersao = localStorage.getItem('hashDeVersao');
     if (hashDeVersao == HASH_DE_VERSAO) {

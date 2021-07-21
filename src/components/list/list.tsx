@@ -7,6 +7,7 @@ interface listData {
     title: string,
     color: string,
     listId: number,
+    listOpener:Function,
     updateDashboard: Function
 }
 
@@ -21,6 +22,9 @@ export default function List(props: listData) {
     }
     const hideOrShowOptions = () => {
         showOptions ? setShowOptions(false) : setShowOptions(true);
+    }
+    const openList = () => {
+        props.listOpener(props.listId);
     }
     return (
 
@@ -43,7 +47,7 @@ export default function List(props: listData) {
                             showListEditor={showListEditor} /> :
                         <div></div>
                 }
-                <h2 className="listTitle">{props.title}</h2>
+                <h2 className="listTitle" onClick={openList}>{props.title}</h2>
                 <i className='bx bx-dots-vertical-rounded menuList' onClick={hideOrShowOptions}></i>
             </div>
 
