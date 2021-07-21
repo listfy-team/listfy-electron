@@ -80,6 +80,20 @@ export function addNewList(listTitle: string, listColor: string) {
     localStorage.setItem('db', JSON.stringify(db));
     console.log('lista Adicionada');
 }
+export function editList(listTitle: string, listColor:string, listId:number){
+    let db = JSON.parse(localStorage.getItem('db'));
+    for(let i = 0 ; i < db.lists.length ; i++){
+        if ( db.lists[i].list_id == listId ){
+            db.lists[i].list_title = listTitle;
+            if(listColor != null){
+                db.lists[i].list_color = listColor;
+            }
+            break;
+        }
+    }
+    localStorage.setItem('db', JSON.stringify(db));
+
+}
 export function deleteList(listId: number){
     let db = JSON.parse(localStorage.getItem('db'));
     for(let i = 0 ; i < db.lists.length ; i++){
