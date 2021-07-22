@@ -3,7 +3,8 @@ import './openedList.scss';
 import Item from '../item/item'
 
 interface openListProps {
-    listId: number
+    listId: number,
+    closeList: Function
 }
 interface itemFormat {
     item_id: number,
@@ -34,7 +35,9 @@ const noneList = {
 export default function OpenedList(props: openListProps) {
     const db = JSON.parse(localStorage.getItem('db'));
     //const [db, setDb] = useState(JSON.parse(localStorage.getItem('db')));
-
+    function closeThatList() {
+        props.closeList();
+    }
     var listData: any;
     for (let i = 0; i < db.lists.length; i++) {
         if (db.lists[i].list_id == props.listId) {
@@ -46,17 +49,29 @@ export default function OpenedList(props: openListProps) {
 
     return (
         <div className="opened-list-container">
+            <header>
+                <div className="title-opened-list">
+                    <h1>
+                        {listData.list_title}
+                    </h1>
+                </div>
+                <div className="header-options">
+                    <i className='bx bx-x-circle close-list-button' onClick={closeThatList}></i>
+                </div>
+            </header>
+            <div className="opened-list">
 
-            { listData.list_items.map((item: any, index:any) => 
-                <Item 
-                itemColor={listData.list_color}
-                itemTitle={item.item_title}
-                itemDescription={item.description}
-                itemDate={item.date}
-                isChecked={item.is_checked}
-                key={index}
-                />
-            )}
+                {listData.list_items.map((item: any, index: any) =>
+                    <Item
+                        itemColor={listData.list_color}
+                        itemTitle={item.item_title}
+                        itemDescription={item.description}
+                        itemDate={item.date}
+                        isChecked={item.is_checked}
+                        key={index}
+                    />
+                )}
+            </div>
         </div>
     )
 }

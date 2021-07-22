@@ -23,6 +23,9 @@ export default function Dashboard() {
     setSelectedList(listId);
     setOpenList(true);
   }
+  function listCloser(){
+    setOpenList(false)
+  }
 
   function showListCreator() {
     console.log(newlist)
@@ -87,7 +90,7 @@ export default function Dashboard() {
       {
         openList ?
           <div className="opened-list-view">
-            <OpenedList listId={selectedList}/>
+            <OpenedList listId={selectedList} closeList={listCloser}/>
           </div> :
           null
       }

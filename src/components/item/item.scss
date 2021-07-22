@@ -1,5 +1,37 @@
-.item-container{
+.item-container {
     border-radius: 10px;
-    border: 2px solid black;
-    margin:10px;
+    padding: 20px;
+    margin:15px;
+    height: auto;
+    .item-header {
+        display: grid;
+        grid-template-columns: 10fr 2fr 1fr;
+        margin-bottom: 20px;
+        .item-date, .item-config{
+            display: grid;
+            place-items: center;
+            .item-date{
+                font-size: 1.3rem;
+            }
+            .item-config{
+                font-size: 2rem;
+            }
+        }
+    }
+    .item-body {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        grid-template-rows: 1fr;
+        .item-checkbox-container {
+            display: grid;
+            place-items: center;
+        }
+        
+        .item-checkbox {
+            transform: scale(4);
+            margin: auto;
+        }
+    }
 }
+
+

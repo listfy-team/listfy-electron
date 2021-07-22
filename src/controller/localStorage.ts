@@ -18,14 +18,14 @@ const db: object = {
             },
             {
                 item_id: 31038404,
-                titulo: 'Documento da Sprint 4',
+                item_title: 'Documento da Sprint 4',
                 description: 'Terminar o documento a ser entregue na sprint 4',
                 date: '06/07/2021',
                 is_checked: true,
             },
             {
                 item_id: 50035049,
-                titulo: 'Teste de software',
+                item_title: 'Teste de software',
                 description: 'Fazer teste das funcionalidades do listfy',
                 date: '10/09/2021',
                 is_checked: true,
@@ -38,20 +38,20 @@ const db: object = {
             list_items: [{
                 item_id: 59944453,
                 item_title: 'Sobre o listfy',
-                description: 'Listfy te ajuda a organizar os estudos da melhor maneira possivel, e com o mínimo de bugs 😉',
+                description: 'FAFAFAFAFAFAFAFAFAFAFA',
                 date: '04/05/4242',
                 is_checked: false,
             },
             {
                 item_id: 31038404,
-                titulo: 'Documento da Sprint 4',
-                description: 'Terminar o documento a ser entregue na sprint 4',
+                item_title: 'Documento da Sprint 4',
+                description: 'So os loucos sabem',
                 date: '06/07/2021',
                 is_checked: true,
             },
             {
                 item_id: 50035049,
-                titulo: 'Teste de software',
+                item_title: 'Teste de software',
                 description: 'Fazer teste das funcionalidades do listfy',
                 date: '10/09/2021',
                 is_checked: true,
@@ -71,7 +71,7 @@ interface list {
 // ==================================
 export function verifyStorage() {
     //listfy-electron-0.1.0
-    const HASH_DE_VERSAO: string = '5fjyfdf3c134vfesvf76453e49f2139c62af092c898a1865a'
+    const HASH_DE_VERSAO: string = '5fjyfdf3c134v3e49f2139c62af092c898a1865a'
     var bancogravado;
     var hashDeVersao = localStorage.getItem('hashDeVersao');
     if (hashDeVersao == HASH_DE_VERSAO) {

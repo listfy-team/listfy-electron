@@ -1,5 +1,20 @@
-.opened-list-conteiner{
-    height: 100%;
-    background-color: #9dffc0;
+
+.opened-list-container{
     padding-left: 20px;
+    header{
+        display: grid;
+        grid-template-columns: 10fr 1fr;
+        .title-opened-list{
+            font-size: 2rem;
+        }
+        .close-list-button{
+            font-size: 4rem;
+        }
+    }
+    .opened-list{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(400px, auto));
+        grid-auto-rows: min-content;
+    }
 }
