@@ -1,40 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './openedList.scss';
 import Item from '../item/item'
+import NewItemModal from '../new-item-modal/newItemModal'
 
 interface openListProps {
     listId: number,
-    closeList: Function
+    closeList: Function,
+    openList: Function,
 }
-interface itemFormat {
-    item_id: number,
-    item_title: string,
-    description: string,
-    date: string,
-    is_checked: boolean,
-}
-interface listFormat {
-    list_id: number,
-    list_title: string,
-    list_color: string,
-    list_items: itemFormat[],
-}
-const noneList = {
-    list_id: 0,
-    list_title: 'none',
-    list_color: 0,
-    list_items: [{
-        item_id: 0,
-        item_title: 'none',
-        description: 'none',
-        date: 'none',
-        is_checked: false,
-    }
-    ]
-}
+
 export default function OpenedList(props: openListProps) {
     const db = JSON.parse(localStorage.getItem('db'));
     //const [db, setDb] = useState(JSON.parse(localStorage.getItem('db')));
+    const [newItemRequired, setNewItemRequired] = useState(false)
+    function closeNewItemModal() {
+        setNewItemRequired(false);
+    }
+    function openNewItemModal() {
+        setNewItemRequired(true);
+    }
     function closeThatList() {
         props.closeList();
     }
@@ -46,7 +30,6 @@ export default function OpenedList(props: openListProps) {
             break;
         }
     }
-
     return (
         <div className="opened-list-container">
             <header>
@@ -71,7 +54,22 @@ export default function OpenedList(props: openListProps) {
                         key={index}
                     />
                 )}
+                <div className="new-item-button"
+                    onClick={() => openNewItemModal()}>
+                    <p><i className='bx bx-plus-circle'></i>Nova tarefa</p>
+                </div>
             </div>
+
+            {
+                newItemRequired ?
+                    <NewItemModal
+                        closeModal={closeNewItemModal}
+                        isNewItemRequired={newItemRequired} 
+                        listId={props.listId}
+                        reloadList={props.openList}/>
+                    : null
+            }
+
         </div>
     )
 }

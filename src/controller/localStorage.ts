@@ -1,4 +1,4 @@
-import { generateListId } from './idHashProcessor'
+import { generateListId, generateItemId } from './idHashProcessor'
 
 const db: object = {
     UserName: "Admin",
@@ -131,4 +131,30 @@ export function deleteList(listId: number) {
         }
     }
     localStorage.setItem('db', JSON.stringify(db));
+}
+
+interface itemObjectFormat {
+    itemTitle: string,
+    itemDate: string,
+    itemDescription: string
+}
+export function addItemToList(listId: number, newItemObject: itemObjectFormat) {
+    let db = JSON.parse(localStorage.getItem('db'));
+    let success: boolean = false;
+    for (let i = 0; i < db.lists.length; i++) {
+        if (db.lists[i].list_id == listId) {
+            let newItemStructure = {
+                item_id: generateItemId(),
+                item_title: newItemObject.itemTitle,
+                description:  newItemObject.itemDescription,
+                date: newItemObject.itemDate,
+                is_checked: false, 
+            }
+            db.lists[i].list_items.push(newItemStructure);
+            success = true;
+            break;
+        }
+    }
+    localStorage.setItem('db', JSON.stringify(db));
+    return success;
 }

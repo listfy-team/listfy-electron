@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import NewList from '../../components/newList/NewList'
 import NewListButton from '../../components/new-list-button/newListButton';
 import OpenedList from '../../components/opened-list/openedList';
+import NewItemModal from '../../components/new-item-modal/newItemModal';
 
 
 
@@ -90,10 +91,11 @@ export default function Dashboard() {
       {
         openList ?
           <div className="opened-list-view">
-            <OpenedList listId={selectedList} closeList={listCloser}/>
+            <OpenedList listId={selectedList} closeList={listCloser} openList={listOpener}/>
           </div> :
           null
       }
+      
     </div>
   );
 }

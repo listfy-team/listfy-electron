@@ -17,4 +17,26 @@
         grid-template-columns: repeat(auto-fill,minmax(400px, auto));
         grid-auto-rows: min-content;
     }
+    .new-item-button{
+        border-radius: 10px;
+        background-color: var(--grey);
+        color: var(--dark-grey);
+        display: grid;
+        place-items: center;
+        font-weight: bold;
+        margin: 15px;
+        min-height: 100px;
+        max-width: 300px;
+        &:hover{
+            filter:brightness(0.5);
+        }
+        p{
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            i{
+                font-size: 3rem;
+            }
+        }
+    }
 }
